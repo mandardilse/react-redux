@@ -23,7 +23,7 @@ router.route('/posts').get((req, res) => {
 });
 
 router.route('/comments').get((req, res) => {
-
+  res.sendFile(path.join(__dirname, 'client/data/comments.js'))
 });
 
 app.use('/api', router);

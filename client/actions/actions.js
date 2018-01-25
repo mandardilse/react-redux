@@ -20,3 +20,12 @@ export function FETCHPOSTDATA() {
         });
     };
 };
+
+export function FETCHCOMMENTDATA() {
+    var cPromise = axios.get('http://localhost:7770/api/comments');
+    return (dispatch) => {
+        cPromise.then(response => {
+            dispatch({ type: 'FETCH_COMMENTS', response: response.data })
+        });
+    }
+}
